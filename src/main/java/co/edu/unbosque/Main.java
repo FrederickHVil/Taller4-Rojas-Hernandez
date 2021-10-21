@@ -70,11 +70,11 @@ public class Main {
                     case 4:
                         System.out.println("Ingrese el ID");
                         int id1= tc.nextInt();
-                        Date date =new Date();
-                        String datee = date.toString();
+                        String robo = "Robo";
+                        String des = "Se ha robado la mascota";
                         conn = DriverManager.getConnection(DB_URL, USER, PASS);
                         PetCaseService petcaseservice = new PetCaseService(conn);
-                        petcaseservice. updatePetCase(new PetCase(0,datee," Robo "," Se robó la mascota ",id1));
+                        petcaseservice. updatePetCase(id1,robo,des);
                         conn.close();
                         break;
                     case 5:
