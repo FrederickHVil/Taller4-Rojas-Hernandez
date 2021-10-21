@@ -26,11 +26,12 @@ public class UserService {
 
         try {
 
-            System.out.println("=> Listing users...");
             stmt = conn.createStatement();
 
             Scanner roleLector = new Scanner(System.in);
-            String sql = "SELECT * FROM UserApp WHERE role = '" + roleLector + "'";
+            //roleLector.nextLine();
+            System.out.println("=> Listing users...");
+            String sql = "SELECT * FROM UserApp WHERE role = 'official'";
             ResultSet rs = stmt.executeQuery(sql);
 
             while(rs.next()) {
@@ -59,7 +60,7 @@ public class UserService {
             rs.close();
             stmt.close();
 
-            
+
         } catch(SQLException se) {
             se.printStackTrace(); // Handling errors from database
         } finally {

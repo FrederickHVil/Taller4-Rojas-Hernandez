@@ -5,10 +5,10 @@ public class Visit {
     private String created_at;
     private String type;
     private String description;
-    private int vet_id;
+    private String vet_id;
     private int pet_id;
 
-    private Visit(int visit_id, String created_at, String type, String description, int vet_id, int pet_id){
+    public Visit(int visit_id, String created_at, String type, String description, String vet_id, int pet_id){
         this.visit_id=visit_id;
         this.created_at=created_at;
         this.type=type;
@@ -49,11 +49,11 @@ public class Visit {
         this.description = description;
     }
 
-    public int getVet_id() {
+    public String getVet_id() {
         return vet_id;
     }
 
-    public void setVet_id(int vet_id) {
+    public void setVet_id(String vet_id) {
         this.vet_id = vet_id;
     }
 
