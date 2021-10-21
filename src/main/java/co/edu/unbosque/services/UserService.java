@@ -18,27 +18,23 @@ public class UserService {
         this.conn = conn;
     }
 
-    public void listUsers(){
+    public void listUsers(String roles){
         Statement stmt = null;
 
         List<UserApp> userApps = new ArrayList<>();
 
 
         try {
-
-            stmt = conn.createStatement();
-
-            Scanner roleLector = new Scanner(System.in);
-            //roleLector.nextLine();
             System.out.println("=> Listing users...");
-            String sql = "SELECT * FROM UserApp WHERE role = 'official'";
+            stmt = conn.createStatement();
+            String sql = "SELECT * FROM UserApp WHERE role = '"+roles+"'";
             ResultSet rs = stmt.executeQuery(sql);
 
             while(rs.next()) {
                 // Extracting row values by column name
-                String username  = rs.getString("email");
-                String password = rs.getString("password");
-                String email = rs.getString("email");
+                String username  = rs.getString("username");
+                String password = rs.getString("email");
+                String email = rs.getString("password");
                 String role = rs.getString("role");
 
                 // Creating a new UserApp class instance and adding it to the array list
@@ -46,7 +42,7 @@ public class UserService {
             }
 
             // Printing results
-            System.out.println("Email | Password | Role");
+            System.out.println("username | Email | Password | Role ");
             for (UserApp user : userApps) {
                 System.out.print(user.getUsername() + " | ");
                 System.out.print(user.getPassword() + " | ");

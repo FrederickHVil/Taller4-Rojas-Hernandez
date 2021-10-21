@@ -18,20 +18,16 @@ public class VisitServices {
         this.conn = conn;
     }
 
-    public void listVisits(){
+    public void listVisits(int ID){
         Statement stmt = null;
 
         List<Visit> visits = new ArrayList<>();
 
 
         try {
-
+            System.out.println("=> Listing visits...");
             stmt = conn.createStatement();
-
-            Scanner idLector = new Scanner(System.in);
-            //idLector.nextLine();
-            System.out.println("=> Listing users...");
-            String sql = "SELECT * FROM Visit WHERE pet_id = '5454'";
+            String sql = "SELECT * FROM Visit WHERE pet_id = '"+ID+"'";
             ResultSet rs = stmt.executeQuery(sql);
 
             while(rs.next()) {
@@ -48,7 +44,7 @@ public class VisitServices {
             }
 
             // Printing results
-            System.out.println("Email | Password | Role");
+            System.out.println("visit_id | created_at | type | description | vet_id | pet_id");
             for (Visit user : visits) {
                 System.out.print(user.getVisit_id() + " | ");
                 System.out.print(user.getCreated_at() + " | ");
@@ -58,7 +54,7 @@ public class VisitServices {
                 System.out.println(user.getPet_id());
             }
 
-            System.out.println("Visits of this pets: " + visits.size() + "\n");
+            System.out.println("visits from this pet: " + visits.size() + "\n");
 
 
             rs.close();
