@@ -18,7 +18,7 @@ public class Main {
         Connection conn = null;
 
         try {
-//prueba
+
             Class.forName(JDBC_DRIVER);
 
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
