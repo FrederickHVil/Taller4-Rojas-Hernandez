@@ -7,7 +7,7 @@ public class UserApp {
     private String role;
 
 
-    private UserApp(String username, String password, String email, String role){
+    public UserApp(String username, String password, String email, String role){
         this.username = username;
         this.password = password;
         this.email = email;
