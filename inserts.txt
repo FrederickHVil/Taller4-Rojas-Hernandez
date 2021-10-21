@@ -1,0 +1,60 @@
+INSERT INTO UserApp(email,password,role,userName)VALUES
+('tiringa@gmail.com','123456','owner','tiringa'),
+('moacir@gmail.com','123456','owner','moacir'),
+('adonildo@gmail.com','123456','owner','adonildo'),
+('kleiton@gmail.com','123456','owner','kleiton'),
+('jetror@gmail.com','123456','owner','jetror'),
+
+('bituca@gmail.com','123456','vet','bituca'),
+('whiplash@gmail.com','123456','vet','whiplash'),
+('natus@gmail.com','123456','vet','natus'),
+('rye@gmail.com','123456','vet','rye'),
+('faze@gmail.com','123456','vet','faze'),
+
+('stigin@gmail.com','123456','official','stigin'),
+('lothar@gmail.com','123456','official','lothar'),
+('aspen@gmail.com','123456','official','aspen'),
+('bellasco@gmail.com','123456','official','bellasco'),
+('drax@gmail.com','123456','official','drax');
+
+INSERT INTO Official(name, userName)VALUES
+('Jorge','stigin'),
+('Luis','lothar'),
+('Ana','aspen'),
+('Camilo','bellasco'),
+('Juan','drax');
+
+INSERT INTO Owner(address,name,neighborhood,person_id,userName)VALUES
+('Calle19#80A-40','Juana','Belén',1212,'tiringa'),
+('Carrera42#54-77','Julian','El recreo',4545,'moacir'),
+('Transversal9aNo.29-29','Lucero','Maldonado',6767,'adonildo'),
+('Calle4norte#10B-66','Flor','Modelo',7878,'kleiton'),
+('Calle28#2-27 ','Jhon','Centro',9090,'jetror');
+
+INSERT INTO Vet(address,name,neighborhood,userName)VALUES
+('Calle5#4-48','Camila','Centro','bituca'),
+('Calle22#33–A88','Rosa','Alcazares','whiplash'),
+('Carrera54No.68-80','Christian','El Prado','natus'),
+('Calle4norte#10B-66','Rodolfo','Kennedy','rye'),
+('Calle59No.27-35','Andres','Galán','faze');
+
+INSERT INTO Pet(microchip,name,owner_id,pet_id,picture,race,sex,size,species)VALUES
+(2314,'firulais',1212,2121,'perrito.png','terranova','masculino','grande','canino'),
+(2564,'Hachiko',4545,3232,'perrito.png','golden','masculino','pequeño','canino'),
+(2352,'laika',6767,4343,'gatito.png','persa','masculino','mediano','felino'),
+(4742,'luna',7878,5454,'gatito.png','esfinge','masculino','grande','felino'),
+(2514,'zeus',9090,6565,'gatito.png','siamés','masculino','pequeño','felino');
+
+INSERT INTO Visit(created_at,description,pet_id,type,vet_id,visit_id)VALUES
+('20-10-2021','....',2121,'esterilización','bituca',0000),
+('21-10-2021','....',3232,'implantación de microchip','whiplash',0001),
+('22-10-2021','....',4343,'vacunación','natus',0002),
+('23-10-2021','....',5454,'desparasitación','rye',0003),
+('24-10-2021','.....',6565,'urgencia y control','faze',0004);
+
+INSERT INTO PetCase(case_id,created_at,description,pet_id,type)VALUES
+(11,'1-10-2021','...',2121,'robo'),
+(22,'2-10-2021','..',3232,'perdida'),
+(33,'3-10-2021','..',4343,'fallecimiento'),
+(44,'4-10-2021','..',5454,'perdida'),
+(55,'5-10-2021','..',6565,'fallecimiento');
