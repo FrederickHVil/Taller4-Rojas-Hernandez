@@ -1,13 +1,13 @@
 package co.edu.unbosque.dtos;
 
-public class Owner {
+public class UserApp {
     private String username;
     private String password;
     private String email;
     private String role;
 
 
-    private Owner(String username, String password, String email, String role){
+    private UserApp(String username, String password, String email, String role){
         this.username = username;
         this.password = password;
         this.email = email;
